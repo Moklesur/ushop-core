@@ -17,14 +17,13 @@ function ushop_framework_init_check() {
     require_once USHOP_PLUG_DIR .'includes/index.php';
     if ( class_exists( 'SiteOrigin_Widget' ) ) {
 
-        require USHOP_PLUG_DIR . 'includes/custom-widgets/widget-services.php';
-        require USHOP_PLUG_DIR . 'includes/custom-widgets/widget-treading-products.php';
-        require USHOP_PLUG_DIR . 'includes/custom-widgets/widget-category-filter.php';
-        require USHOP_PLUG_DIR . 'includes/custom-widgets/widget-category-list.php';
-        require USHOP_PLUG_DIR . 'includes/custom-widgets/widget-recent-blog.php';
-        require USHOP_PLUG_DIR . 'includes/custom-widgets/widgets.php';
-
-        require USHOP_PLUG_DIR . 'includes/custom-widgets/so-widget.php';
+        require USHOP_PLUG_DIR . 'includes/custom-widget/widget-services.php';
+        require USHOP_PLUG_DIR . 'includes/custom-widget/widget-treading-products.php';
+        require USHOP_PLUG_DIR . 'includes/custom-widget/widget-category-filter.php';
+        require USHOP_PLUG_DIR . 'includes/custom-widget/widget-category-list.php';
+        require USHOP_PLUG_DIR . 'includes/custom-widget/widget-recent-blog.php';
+        require USHOP_PLUG_DIR . 'includes/custom-widget/widgets.php';
+        require USHOP_PLUG_DIR . 'includes/custom-widget/so-widget.php';
 
     }
 }

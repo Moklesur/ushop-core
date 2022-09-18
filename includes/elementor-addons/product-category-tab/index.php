@@ -84,7 +84,7 @@ class Ushop_Product_Category extends Widget_Base {
      * @access protected
      */
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section(
             'category_post_section',
@@ -149,10 +149,6 @@ class Ushop_Product_Category extends Widget_Base {
             [
                 'label' => __( 'Title Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#212529',
                 'selectors' => [
                     '{{WRAPPER}} .elementor-widget-category-filter .title-heading' => 'color: {{VALUE}}',
@@ -164,7 +160,6 @@ class Ushop_Product_Category extends Widget_Base {
             [
                 'name' => 'title_typography',
                 'label' => __( 'Typography', 'ushop' ),
-                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .elementor-widget-category-filter .title-heading',
             ]
         );

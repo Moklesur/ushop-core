@@ -83,7 +83,7 @@ class Ushop_Hero_Banner extends Widget_Base {
      * @access protected
      */
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         // Content
         $this->start_controls_section(
@@ -203,10 +203,6 @@ class Ushop_Hero_Banner extends Widget_Base {
             [
                 'label' => __( 'Title Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#212529',
                 'selectors' => [
                     '{{WRAPPER}} .hero-content h2' => 'color: {{VALUE}}',
@@ -218,10 +214,6 @@ class Ushop_Hero_Banner extends Widget_Base {
             [
                 'label' => __( 'Content Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#212529',
                 'selectors' => [
                     '{{WRAPPER}} .hero-content p' => 'color: {{VALUE}}',
@@ -242,10 +234,6 @@ class Ushop_Hero_Banner extends Widget_Base {
             [
                 'label' => __( 'Text Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#ffffff',
                 'selectors' => [
                     '{{WRAPPER}} .hero-content a' => 'color: {{VALUE}}',
@@ -257,10 +245,6 @@ class Ushop_Hero_Banner extends Widget_Base {
             [
                 'label' => __( 'Background Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#1fc0a0',
                 'selectors' => [
                     '{{WRAPPER}} .hero-content a' => 'background: {{VALUE}}',
@@ -303,26 +287,6 @@ class Ushop_Hero_Banner extends Widget_Base {
         <?php
     }
 
-    protected function _content_template() {
-        ?>
-        <#
-        var target = settings.button_url.is_external ? ' target="_blank"' : '';
-        var nofollow = settings.button_url.nofollow ? ' rel="nofollow"' : '';
-        #>
-        <section class="hero-area position-relative">
-            <div class="container-fluid">
-                <div class="hero-content">
-                    <div class="container-fluid">
-                    <h2>{{{ settings.title }}}</h2>
-                    <p>{{{ settings.paragraph }}}</p>
-                    <a href="{{ settings.button_url.url }}"{{ target }}{{ nofollow }}>{{{ settings.button_text }}}</a>
-                    <img src="{{ settings.banner.url }}">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <?php
-    }
 }
 
 Plugin::instance()->widgets_manager->register( new Ushop_Hero_Banner() );

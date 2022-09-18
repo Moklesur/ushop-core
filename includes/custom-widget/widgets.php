@@ -61,8 +61,8 @@ $ushop_theme_widgets = array(
     'widget-recent-blog'
 );
 
-$template_dir = get_template_directory();
+$template_dir = USHOP_PLUG_DIR;
 
 foreach ( $ushop_theme_widgets as $widget ) {
-    require_once $template_dir . '/inc/widgets/' . $widget . '.php';
+    require_once $template_dir . 'includes/custom-widget/' . $widget . '.php';
 }

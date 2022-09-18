@@ -78,7 +78,7 @@ class Ushop_Service_Icon extends \Elementor\Widget_Base {
      * @since 1.0.0
      * @access protected
      */
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section(
             'content_section',
@@ -189,10 +189,6 @@ class Ushop_Service_Icon extends \Elementor\Widget_Base {
             [
                 'label' => __( 'Icon Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#1fc0a0',
                 'selectors' => [
                     '{{WRAPPER}} .elementor-service-icon .fa' => 'color: {{VALUE}}',
@@ -204,10 +200,6 @@ class Ushop_Service_Icon extends \Elementor\Widget_Base {
             [
                 'label' => __( 'Title Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#212529',
                 'selectors' => [
                     '{{WRAPPER}} .elementor-service-icon h5' => 'color: {{VALUE}}',
@@ -219,10 +211,6 @@ class Ushop_Service_Icon extends \Elementor\Widget_Base {
             [
                 'label' => __( 'Content Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#212529',
                 'selectors' => [
                     '{{WRAPPER}} .elementor-service-icon p' => 'color: {{VALUE}}',
@@ -343,25 +331,6 @@ class Ushop_Service_Icon extends \Elementor\Widget_Base {
             </div>
             <?php
         }
-    }
-    protected function _content_template() {
-        ?>
-        <# if ( settings.list.length ) { #>
-        <div class="widget-services text-center row">
-            <# _.each( settings.list, function( item ) { #>
-            <div class="col-lg-4 col-md-4 col-12 mt-30 position-relative">
-                <div class="mb-3"><i class="{{ item.icon }}" aria-hidden="true"></i></div>
-                <div class="services-contents">
-                    <div class="widgets-heading">
-                        <h5>{{{ item.list_title }}}</h5>
-                    </div>
-                    <p class="services-text mb-0">{{{ item.list_content }}}</p>
-                </div>
-            </div>
-            <# }); #>
-        </div>
-        <# } #>
-        <?php
     }
 }
 Plugin::instance()->widgets_manager->register( new Ushop_Service_Icon() );

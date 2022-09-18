@@ -83,7 +83,7 @@ class Ushop_Trading_Products extends Widget_Base {
      * @access protected
      */
 
-    protected function _register_controls() {
+    protected function register_controls() {
         // Content
         $this->start_controls_section(
             'ushop_trading_product_Content',
@@ -202,10 +202,6 @@ class Ushop_Trading_Products extends Widget_Base {
             [
                 'label' => __( 'Title Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#212529',
                 'selectors' => [
                     '{{WRAPPER}} .elementor-trending-products h2' => 'color: {{VALUE}}',
@@ -226,10 +222,6 @@ class Ushop_Trading_Products extends Widget_Base {
             [
                 'label' => __( 'Text Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#ffffff',
                 'selectors' => [
                     '{{WRAPPER}} .view-all' => 'color: {{VALUE}}',
@@ -241,10 +233,6 @@ class Ushop_Trading_Products extends Widget_Base {
             [
                 'label' => __( 'Background Color', 'ushop' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
                 'default' => '#1fc0a0',
                 'selectors' => [
                     '{{WRAPPER}} .view-all' => 'background: {{VALUE}}',
