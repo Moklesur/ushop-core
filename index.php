@@ -24,9 +24,24 @@ function ushop_framework_init_check() {
         require USHOP_PLUG_DIR . 'includes/custom-widget/widget-recent-blog.php';
         require USHOP_PLUG_DIR . 'includes/custom-widget/widgets.php';
         require USHOP_PLUG_DIR . 'includes/custom-widget/so-widget.php';
-
     }
 }
 add_action( 'plugins_loaded', 'ushop_framework_init_check' );
+
+add_action( 'widgets_init', 'ushop_widget_init' );
+function ushop_widget_init(){
+    // SO Plugin
+    if ( class_exists( 'SiteOrigin_Widget' ) ) {
+        // Register Widgets
+        register_widget('uShop_Widget_Services');
+        if (class_exists('WooCommerce')) {
+            register_widget('uShop_Widget_Trending_Products');
+            register_widget('uShop_Widget_Category_Filter');
+            register_widget('uShop_Widget_Category_List');
+        }
+        register_widget('uShop_Widget_Feature_Box');
+        register_widget('uShop_Widget_Recent_Blog');
+    }
+}
 
 ?>
